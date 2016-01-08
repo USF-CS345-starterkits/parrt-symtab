@@ -1,0 +1,6 @@
+global
+    T
+        greet
+            local
+        bye
+            local

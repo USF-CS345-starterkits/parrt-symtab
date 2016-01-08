@@ -1,0 +1,11 @@
+global
+    add
+        add.x
+        add.y
+        local
+            duh
+                duh.z
+                local
+                    local.x
+                    local
+                        local.y
