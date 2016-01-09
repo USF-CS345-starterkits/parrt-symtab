@@ -1,0 +1,5 @@
+global
+    foo
+        local
+            <local.x:number>
+            <local.y:string>

@@ -1,0 +1,6 @@
+global
+    Animal
+        <Animal.name:string>
+    Dog
+        f
+            local

@@ -1,0 +1,8 @@
+global
+    add
+        <add.x:number>
+        <add.y:number>
+        local
+            duh
+                <duh.z:string>
+                local

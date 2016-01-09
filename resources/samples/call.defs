@@ -1,0 +1,7 @@
+global
+    <global.x:string>
+    f
+        local
+    g
+        <g.i:number>
+        local

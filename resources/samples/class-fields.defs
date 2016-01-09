@@ -1,0 +1,4 @@
+global
+    T
+        <T.a:number>
+        <T.b:string>

@@ -1,0 +1,9 @@
+global
+    T
+        <T.x:number>
+        f
+            <f.t:global.T>
+            local
+        g
+            <g.t:global.T>
+            local

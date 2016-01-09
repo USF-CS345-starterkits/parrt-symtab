@@ -1,6 +1,0 @@
-global
-    Horse
-    Dog
-        Dog.breed
-    Animal
-        Animal.name

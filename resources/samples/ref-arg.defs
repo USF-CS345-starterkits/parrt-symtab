@@ -1,0 +1,4 @@
+global
+    f
+        <f.x:number>
+        local

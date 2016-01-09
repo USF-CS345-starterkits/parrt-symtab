@@ -1,5 +1,0 @@
-global
-    foo
-        local
-            local.x
-            local.y

@@ -1,0 +1,7 @@
+global
+    A
+        <A.x:number>
+    B
+        <B.a:global.A>
+        f
+            local
