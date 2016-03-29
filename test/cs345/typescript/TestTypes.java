@@ -11,18 +11,18 @@ import java.net.URL;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestRefs extends TestTypeScript {
-	public TestRefs(String filename, String input) {
+public class TestTypes extends TestTypeScript {
+	public TestTypes(String filename, String input) {
 		super(filename, input);
-		resultFileSuffix = ".refs";
+		resultFileSuffix = ".types";
 	}
 
 	@Test
-	public void testReferences() throws IOException {
-		checkRefs(input);
+	public void testTypeComputations() throws IOException {
+		checkTypes(input);
 	}
 
-	public void checkRefs(String input) throws IOException {
+	public void checkTypes(String input) throws IOException {
 		URL testFolder = TestTypeScript.class.getClassLoader().getResource(SAMPLES_DIR);
 		String outputFilename = basename(filename)+resultFileSuffix;
 		String expecting = readFile(new File(testFolder.getPath(),outputFilename).getPath());
@@ -36,10 +36,10 @@ public class TestRefs extends TestTypeScript {
 		DefScopesAndSymbols defPhase = new DefScopesAndSymbols();
 		ParseTreeWalker.DEFAULT.walk(defPhase, tree);
 
-		// REFS
-		RefSymbols refPhase = new RefSymbols();
-		ParseTreeWalker.DEFAULT.walk(refPhase, tree);
+		// TYPES
+		ComputeTypes typesPhase = new ComputeTypes();
+		typesPhase.visit(tree);
 
-		assertEquals(expecting, refPhase.getRefOutput());
+		assertEquals(expecting, typesPhase.getRefOutput());
 	}
 }
