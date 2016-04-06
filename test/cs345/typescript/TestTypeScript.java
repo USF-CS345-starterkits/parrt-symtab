@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -55,8 +56,13 @@ public abstract class TestTypeScript {
 	}
 
 	public static String readFile(String path) throws IOException {
-		byte[] encoded = Files.readAllBytes(Paths.get(path));
-		return new String(encoded);
+		try {
+			byte[] encoded = Files.readAllBytes(Paths.get(path));
+			return new String(encoded);
+		}
+		catch (NoSuchFileException nsfe) {
+			return "";
+		}
 	}
 
 	/** e.g., replaceFileSuffix("foo.ts", ".output") */
